@@ -24,7 +24,13 @@ module Playdate
 		end
 
 		def <=>(other)
-			to_i <=> other.to_i
+			year_comparison = @date.year <=> other.date.year
+
+			if year_comparison == 0
+				@date.month <=> other.date.month
+			else
+				year_comparison
+			end
 		end
 
 		def succ
@@ -48,5 +54,9 @@ module Playdate
 		def inspect
 			"#{name} #{year}"
 		end
+
+		protected
+
+		attr_accessor :date
 	end
 end

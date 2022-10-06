@@ -1,9 +1,7 @@
 # frozen_string_literal: true
 
-require "test_helper"
-
-class PlaydateTest < Minitest::Test
-  def test_that_it_has_a_version_number
-    refute_nil ::Playdate::VERSION
+describe Playdate do
+  it "has a version" do
+    expect(Playdate::VERSION).to be != nil
   end
 end

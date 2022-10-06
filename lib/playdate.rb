@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
-require_relative "playdate/version"
+require "zeitwerk"
+require "date"
+
+loader = Zeitwerk::Loader.for_gem(warn_on_extra_files: false)
+loader.setup
 
 module Playdate
   class Error < StandardError; end

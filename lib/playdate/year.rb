@@ -8,6 +8,14 @@ module Playdate
 			@date.year
 		end
 
+		def <=>(other)
+			to_i <=> other.to_i
+		end
+
+		def ==(other)
+			to_i == other.to_i
+		end
+
 		def to_s
 			to_i.to_s
 		end
