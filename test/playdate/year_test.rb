@@ -1,8 +1,8 @@
 require "playdate"
 
 describe Playdate::Year do
-	let(:twenty_twenty_two) { Playdate::Year.new(Date.new(2022)) }
-	let(:twenty_twenty_four) { Playdate::Year.new(Date.new(2024)) }
+	let(:twenty_twenty_two) { Playdate::Year.new(year: 2022) }
+	let(:twenty_twenty_four) { Playdate::Year.new(year: 2024) }
 
 	class << self
 		alias_method :test, :it

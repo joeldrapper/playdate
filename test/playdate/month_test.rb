@@ -1,9 +1,9 @@
 require "playdate"
 
 describe Playdate::Month do
-	let(:january) { Playdate::Month.new(Date.new(2022, 01)) }
-	let(:december) { Playdate::Month.new(Date.new(2022, 12)) }
-	let(:next_january) { Playdate::Month.new(Date.new(2023, 01)) }
+	let(:january) { Playdate::Month.new(year: 2022, month: 01) }
+	let(:december) { Playdate::Month.new(year: 2022, month: 12) }
+	let(:next_january) { Playdate::Month.new(year: 2023, month: 01) }
 
 	class << self
 		alias_method :test, :it
@@ -14,13 +14,13 @@ describe Playdate::Month do
 		expect(december.name).to be == "December"
 	end
 
-	test "to_i" do
-		expect(january.to_i).to be == 1
-		expect(december.to_i).to be == 12
+	test "abbreviated_name" do
+		expect(january.abbreviated_name).to be == "Jan"
+		expect(december.abbreviated_name).to be == "Dec"
 	end
 
 	test "year" do
-		expect(january.year).to be == Playdate::Year.new(Date.new(2022))
+		expect(january.year).to be == Playdate::Year.new(year: 2022)
 	end
 
 	test "<=> comparison within the same year" do
