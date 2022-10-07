@@ -1,12 +1,22 @@
 module Playdate
 	class Month
+		class << self
+			def names
+				I18n.t("playdate.date.month_names")
+			end
+
+			def abbreviated_names
+				I18n.t("playdate.date.abbr_month_names")
+			end
+		end
+
 		attr_accessor :date
 
 		def initialize(year:, month:)
 			@date = Date.new(year, month)
 		end
 
-		Date::MONTHNAMES.each_with_index do |name, index|
+		names.each_with_index do |name, index|
 			next unless name
 			define_method("#{name.downcase}?") { to_i == index  }
 		end
@@ -40,7 +50,7 @@ module Playdate
 		end
 
 		def name
-			Date::MONTHNAMES[@date.month]
+			self.class.names[@date.month]
 		end
 
 		def month_of_year
@@ -48,7 +58,7 @@ module Playdate
 		end
 
 		def abbreviated_name
-			Date::MONTHNAMES[@date.month][0, 3]
+			self.class.abbreviated_names[@date.month]
 		end
 
 		alias_method :to_s, :name
