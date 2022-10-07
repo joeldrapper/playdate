@@ -1,0 +1,28 @@
+fr:
+  playdate:
+    date:
+      formats:
+        # Use the strftime parameters for formats.
+        # When no format has been given, it uses default.
+        # You can provide other formats here if you like!
+        default: "%Y-%m-%d"
+        short: "%b %d"
+        long: "%B %d, %Y"
+
+      day_names: [Dimanche, Lundi, Mardi, Mercredi, Jeudi, Vendredi, Samedi]
+      abbr_day_names: [Dim, Lun, Mar, Mer, Jeu, Ven, Sam]
+
+      # Don't forget the nil at the beginning; there's no such thing as a 0th month
+      month_names: [~, Janvier, Fèvrier, Mars, Avril, Mai, Juin, Juillet, Août, Septembre, Octobre, Novembre, Décembre]
+      abbr_month_names: [~, Jan, Fèv, Mar, Avr, Mai, Jun, Jul, Aoû, Sep, Oct, Nov, Déc]
+      # Used in date_select and datetime_select.
+      order:
+        - year
+        - month
+        - day
+
+      time:
+        formats:
+          default: "%a, %d %b %Y %H:%M:%S %z"
+          short: "%d %b %H:%M"
+          long: "%B %d, %Y %H:%M"

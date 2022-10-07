@@ -1,5 +1,15 @@
 module Playdate
   class Day
+		class << self
+			def names
+				I18n.t("playdate.date.day_names")
+			end
+
+			def abbreviated_names
+				I18n.t("playdate.date.abbr_day_names")
+			end
+		end
+
 		def initialize(year:, month:, day:)
 			@date = Date.new(year, month, day)
 		end
@@ -19,7 +29,11 @@ module Playdate
 		end
 
 		def name
-			Date::DAYNAMES[@date.wday]
+			self.class.names[@date.wday]
+		end
+
+		def abbreviated_name
+			self.class.abbreviated_names[@date.wday]
 		end
 
 		def month
