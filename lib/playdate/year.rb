@@ -1,6 +1,6 @@
 module Playdate
 	class Year
-		include Relative::Year
+		include Relative::Years
 
 		def initialize(year:)
 			@date = Date.new(year)

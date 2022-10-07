@@ -1,5 +1,9 @@
 module Playdate
 	class Week
+		include Relative::Weeks
+		include Relative::Months
+		include Relative::Years
+
 		def initialize(year:, week:)
 			@date = Date.commercial(year, week)
 		end

@@ -1,9 +1,9 @@
 module Playdate
   class Day
-		include Relative::Day
-		include Relative::Week
-		include Relative::Month
-		include Relative::Year
+		include Relative::Days
+		include Relative::Weeks
+		include Relative::Months
+		include Relative::Years
 
 		class << self
 			def names

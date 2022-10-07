@@ -1,7 +1,7 @@
 module Playdate
 	class Month
-		include Relative::Month
-		include Relative::Year
+		include Relative::Months
+		include Relative::Years
 
 		class << self
 			def names

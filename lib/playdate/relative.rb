@@ -1,6 +1,6 @@
 module Playdate
 	module Relative
-		module Day
+		module Days
 			def yesterday?
 				@date == Date.today - 1
 			end
@@ -14,7 +14,7 @@ module Playdate
 			end
 		end
 
-		module Week
+		module Weeks
 			def last_week?
 			end
 
@@ -25,7 +25,7 @@ module Playdate
 			end
 		end
 
-		module Month
+		module Months
 			def last_month?
 			end
 
@@ -36,7 +36,7 @@ module Playdate
 			end
 		end
 
-		module Year
+		module Years
 			def last_year?
 			end
 
