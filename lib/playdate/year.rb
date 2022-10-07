@@ -36,6 +36,10 @@ module Playdate
 			Period::Months.new(first_month..last_month)
 		end
 
+		def weeks
+			Period::Weeks.new(first_week..last_week)
+		end
+
 		def days
 			Period::Days.new(first_day..last_day)
 		end
@@ -46,6 +50,14 @@ module Playdate
 
 		def last_month
 			Month.new(year: @date.year, month: 12)
+		end
+
+		def first_week
+			Week.new(year: @date.year, week: 1)
+		end
+
+		def last_week
+			Week.new(year: @date.year, week: -1)
 		end
 
 		def first_day
