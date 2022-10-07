@@ -8,6 +8,10 @@ module Playdate
 
 		attr_accessor :date
 
+		def inspect
+			"Playdate::Year(year: #{@date.year})"
+		end
+
 		def to_i
 			@date.year
 		end

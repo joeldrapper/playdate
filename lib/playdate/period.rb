@@ -2,6 +2,10 @@ module Playdate
 	class Period
 		include Enumerable
 
+		def inspect
+			@range.inspect
+		end
+
 		def initialize(range)
 			@range = range
 		end

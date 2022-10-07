@@ -67,7 +67,7 @@ module Playdate
 		alias_method :to_s, :name
 
 		def inspect
-			"#{name} #{year}"
+			"#{self.class.name}(year: #{@date.year}, month: #{@date.month})"
 		end
 	end
 end

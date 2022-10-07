@@ -21,6 +21,10 @@ module Playdate
 
 		attr_accessor :date
 
+		def inspect
+			"Playdate::Day(year: #{@date.year}, month:#{@date.month}, day: #{@date.day})"
+		end
+
 		# @return [Integer] The day of the month, from 1-31
 		def day_of_month
 			@date.day
