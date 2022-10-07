@@ -35,6 +35,9 @@ GEM
     ruby-progressbar (1.11.0)
     sus (0.14.0)
     unicode-display_width (2.3.0)
+    webrick (1.7.0)
+    yard (0.9.28)
+      webrick (~> 1.7.0)
     zeitwerk (2.6.1)
 
 PLATFORMS
@@ -47,6 +50,7 @@ DEPENDENCIES
   rake (~> 13.0)
   rubocop
   sus
+  yard
   zeitwerk
 
 BUNDLED WITH

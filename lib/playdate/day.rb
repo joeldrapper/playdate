@@ -70,10 +70,6 @@ module Playdate
 			self.class.abbreviated_names[@date.wday]
 		end
 
-		def abbreviated_name
-			name[0, 3]
-		end
-
 		def month
 			@month ||= Month.new(year: @date.year, month: @date.month)
 		end
