@@ -1,5 +1,10 @@
 module Playdate
   class Day
+		include Relative::Day
+		include Relative::Week
+		include Relative::Month
+		include Relative::Year
+
 		class << self
 			def names
 				I18n.t("playdate.date.day_names")
@@ -15,36 +20,6 @@ module Playdate
 		end
 
 		attr_accessor :date
-
-		def today?
-			@date == Date.today
-		end
-
-		def yesterday?
-			@date == Date.today - 1
-		end
-
-		def tomorrow?
-			@date == Date.today + 1
-		end
-
-		def this_week?
-		end
-
-		def last_week?
-		end
-
-		def this_month?
-		end
-
-		def last_month?
-		end
-
-		def this_year?
-		end
-
-		def last_year?
-		end
 
 		# @return [Integer] The day of the month, from 1-31
 		def day_of_month

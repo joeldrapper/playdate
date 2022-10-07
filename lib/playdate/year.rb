@@ -1,6 +1,6 @@
 module Playdate
 	class Year
-		include Enumerable
+		include Relative::Year
 
 		def initialize(year:)
 			@date = Date.new(year)
@@ -33,7 +33,11 @@ module Playdate
 		end
 
 		def months
-			first_month..last_month
+			Period::Months.new(first_month..last_month)
+		end
+
+		def days
+			Period::Days.new(first_day..last_day)
 		end
 
 		def first_month
@@ -42,6 +46,16 @@ module Playdate
 
 		def last_month
 			Month.new(year: @date.year, month: 12)
+		end
+
+		def first_day
+			date = Date.new(@date.year, 1, 1)
+			Day.new(year: date.year, month: date.month, day: date.day)
+		end
+
+		def last_day
+			date = Date.new(@date.year, 12, -1)
+			Day.new(year: date.year, month: date.month, day: date.day)
 		end
 	end
 end

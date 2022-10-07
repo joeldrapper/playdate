@@ -1,5 +1,8 @@
 module Playdate
 	class Month
+		include Relative::Month
+		include Relative::Year
+
 		class << self
 			def names
 				I18n.t("playdate.date.month_names")
@@ -34,7 +37,7 @@ module Playdate
 		end
 
 		def days
-			first_day..last_day
+			Playdate::Period::Days.new(first_day..last_day)
 		end
 
 		def first_day
