@@ -57,6 +57,16 @@ module Playdate
 			@year ||= Year.new(year: @date.year)
 		end
 
+		def +(other)
+			new_date = @date + other
+
+			self.class.new(
+				year: new_date.year,
+				month: new_date.month,
+				day: new_date.day
+			)
+		end
+
 		# @return [Integer] comparison
 		def <=>(other)
 			@date <=> other.date
