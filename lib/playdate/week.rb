@@ -3,6 +3,7 @@ module Playdate
 		include Relative::Weeks
 		include Relative::Months
 		include Relative::Years
+		include Comparable
 
 		def initialize(year:, week:)
 			@date = Date.strptime("#{year}-#{week}", "%Y-%W")
