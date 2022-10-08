@@ -57,11 +57,11 @@ module Playdate
 		end
 
 		def first_week
-			Week.new(year: @date.year, week: 1)
+			Week.new(year: @date.year, week: 0)
 		end
 
 		def last_week
-			Week.new(year: @date.year, week: -1)
+			Week.new(year: @date.year, week: number_of_weeks)
 		end
 
 		def first_day
@@ -72,6 +72,12 @@ module Playdate
 		def last_day
 			date = Date.new(@date.year, 12, -1)
 			Day.new(year: date.year, month: date.month, day: date.day)
+		end
+
+		def number_of_weeks
+			@date.step(Date.new(@date.year,-1,-1)).select do |day|
+				day.monday?
+			end.size
 		end
 	end
 end
