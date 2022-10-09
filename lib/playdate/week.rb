@@ -24,6 +24,19 @@ module Playdate
 			@year ||= Year.new(year: @date.year)
 		end
 
+		def days
+			Period::Weeks.new(first_day..last_day)
+		end
+
+		def first_day
+			Day.new(year: @date.year, month: @date.month, day: @date.day)
+		end
+
+		def last_day
+			date = Date.strptime("#{@date.year}-#{number}-#{7}", "%Y-%W-%u")
+			Day.new(year: date.year, month: date.month, day: date.day)
+		end
+
 		def number
 			@date.strftime("%W").to_i
 		end
