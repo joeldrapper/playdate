@@ -52,11 +52,11 @@ module Playdate
 		end
 
 		def weeks
-			Playdate::Period::Weeks.new(first_week..last_week)
+			Period::Weeks.new(first_week..last_week)
 		end
 
 		def days
-			Playdate::Period::Days.new(first_day..last_day)
+			Period::Days.new(first_day..last_day)
 		end
 
 		def first_week
